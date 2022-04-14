@@ -32,10 +32,17 @@ public class Location {
         setState(LocationState.OCCUPIED);
     }
 
-    public void pickup(LoadCarrier loadCarrier)
+    public LoadCarrier pickup()
     {
+        LoadCarrier tempLc = null;
+        
+        if (lc != null)
+        {
+            tempLc = lc;
+        }
         lc = null;
         setState(LocationState.EMPTY);
+        return tempLc;
     }
 
     @Override

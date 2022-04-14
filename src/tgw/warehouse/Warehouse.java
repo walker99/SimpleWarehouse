@@ -3,7 +3,7 @@ package tgw.warehouse;
 import java.util.ArrayList;
 
 public class Warehouse {
-    private String name;
+    public String name;
     private ArrayList<Aisle> aisles;
     //private List<Conveyor> conveyors;
     // and more other warehouse objects
