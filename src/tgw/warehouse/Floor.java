@@ -32,6 +32,7 @@ public class Floor {
     {
         int sum = 0;
         int noOfSlots = slots.size();
+        // noOfLocations = slots.get(0).getLocations().size()
         int capacity = slots.get(0).getLocations().size() * noOfSlots;
 
         for (Slot slot:slots)

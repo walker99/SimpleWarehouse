@@ -28,6 +28,39 @@ public class Rack {
         this.floors = floors;
     }
 
+    public double getCurrentOccupancyRate()
+    {
+        int sum = 0;
+        int noOfFloors = floors.size();
+        // all locations = noOfFloors*noOfSlots*noOfLocations
+        int capacity = noOfFloors * floors.get(0).getSlots().size()*floors.get(0).getSlots().get(0).getLocations().size();
+
+        for (Floor floor:floors){
+            for (Slot slot:floor.getSlots())
+            {
+                for (Location location:slot.getLocations())
+                {
+                    if (location.getState() == LocationState.BLOCKED)
+                    {
+                        capacity--;
+                    }
+                }
+            }
+        }
+
+        for (Floor floor:floors) {
+            for (Slot slot : floor.getSlots()) {
+                for (Location location : slot.getLocations()) {
+                    if (location.getState() == LocationState.EMPTY) {
+                        sum++;
+                    }
+                }
+            }
+        }
+
+        return 1.0 - (double) sum/(double) capacity;
+    }
+
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
