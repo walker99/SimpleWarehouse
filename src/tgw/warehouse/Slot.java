@@ -87,7 +87,7 @@ public class Slot {
 
         // calculate the capacity
         // todo: think about the situation if all locations are blocked!
-        return 1.0 - (double) sum/ (double) capacity;
+        return (double) sum/ (double) capacity;
     }
 
     /**

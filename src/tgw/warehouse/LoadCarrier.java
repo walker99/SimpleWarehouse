@@ -9,8 +9,6 @@ public class LoadCarrier {
 
     @Override
     public String toString() {
-        return "LoadCarrier{" +
-                "number='" + number + '\'' +
-                '}';
+        return "LoadCarrier{" + number + "}";
     }
 }

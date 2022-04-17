@@ -26,6 +26,14 @@ public class Location {
         this.state = state;
     }
 
+    public LoadCarrier getLc() {
+        return lc;
+    }
+
+    public void setLc(LoadCarrier lc) {
+        this.lc = lc;
+    }
+
     public void deposit(LoadCarrier loadCarrier)
     {
         lc = loadCarrier;
